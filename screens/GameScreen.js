@@ -22,11 +22,16 @@ const GameScreen = props => {
         generateRandomBetween(1, 100, props.userChoice)
     );
     const [rounds, setRounds] = useState(0);
+    const currentLow = useRef(1);
+    const currentHigh = useRef(100);
+    const {userChoice, onGameOver} = props;
+
+
     useEffect(() => {
         if (currentGuess === props.userChoice) {
             props.onGameOver(rounds);
         }
-    });
+    }, [currentGuess, userChoice, onGameOver]);
 
     const nextGuessHandle = direction  => {
     
@@ -46,8 +51,7 @@ const GameScreen = props => {
         setRounds(curRounds => curRounds + 1);
     
     }
-    const currentLow = useRef(1);
-    const currentHigh = useRef(100);
+
 
     return (
         <View style={styles.screen}>

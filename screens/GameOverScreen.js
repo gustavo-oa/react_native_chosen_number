@@ -7,8 +7,8 @@ const GameOverScreen = props => {
         <View style={styles.screen}>
             <Card>
                 <Text style={styles.text}>The Game is Over.</Text>
-                <Text style={styles.text}>Your selected Number Is </Text>
-                <NumberContainer>{props.userChoice}</NumberContainer>
+                <Text style={styles.text}>Number of rounds: {props.roundsNumber}</Text>
+                <Text style={styles.text}>Number was:: {props.userChoice}</Text>
                 <Button title="Done"/>
             </Card>
         </View>
