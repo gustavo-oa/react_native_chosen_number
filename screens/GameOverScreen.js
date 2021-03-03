@@ -1,6 +1,5 @@
 import React  from 'react'
 import {View, Text, StyleSheet, Button } from 'react-native'
-import NumberContainer from '../components/NumberContainer'
 import Card from '../components/Card'
 const GameOverScreen = props => {
     return (
