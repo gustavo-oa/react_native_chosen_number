@@ -6,7 +6,6 @@ import StartGameScreen from './screens/StartGameScreen'
 import GameScreen from './screens/GameScreen'
 import GameOverScreen from './screens/GameOverScreen'
 
-
 export default function App() {
   const [userNumber, setUserNamber] = useState();
   const [guessRound, setGuessRound] = useState(0);
