@@ -9,7 +9,7 @@ const GameOverScreen = props => {
                 <Text style={styles.text}>The Game is Over.</Text>
                 <Text style={styles.text}>Number of rounds: {props.roundsNumber}</Text>
                 <Text style={styles.text}>Number was:: {props.userChoice}</Text>
-                <Button title="Done"/>
+                <Button title="New Game" onPress={props.onRestart}/>
             </Card>
         </View>
     )
