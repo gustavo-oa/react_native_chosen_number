@@ -13,7 +13,7 @@ import Card from '../components/Card';
 import colors from '../constants/colors'
 import Input from '../components/Input'
 import NumberContainer from '../components/NumberContainer'
-
+import MainButton from '../components/MainButton'
 
 const StartGameScreen = props => {
 
@@ -55,7 +55,9 @@ const StartGameScreen = props => {
             <Card style={styles.summaryContainer}>            
                 <Text>You selected</Text>
                 <NumberContainer>{selectedNumber}</NumberContainer>
-                <Button title="Start Game" onPress={() => props.onStartGame(selectedNumber)}/>            
+                <MainButton onPress={() => props.onStartGame(selectedNumber)}> 
+                    <Text>Start Game</Text>            
+                </MainButton>
             </Card>
         )
     }
@@ -80,10 +82,14 @@ const StartGameScreen = props => {
                     />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
-                            <Button title='Reset' onPress={resetInputHandle} color={colors.secondaryColor} />
+                            <MainButton style={styles.buttonReset} onPress={resetInputHandle} color={colors.secondaryColor} >
+                                <Text>Reset</Text> 
+                            </MainButton>
                         </View>
-                        <View style={styles.button}>
-                            <Button title='Confirm' onPress={confirmInputHandle} color={colors.primaryColor} />
+                        <View style={styles.button} >
+                            <MainButton  onPress={confirmInputHandle} color={colors.primaryColor} >
+                                <Text> Confirm </Text>
+                            </MainButton>
                         </View>
                     </View>
 
@@ -105,8 +111,8 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     inputContainer: {
-        width: '80%',
-        maxWidth: '80%',
+        width: '90%',
+        maxWidth: '90%',
         alignItems: 'center'
     },
     buttonContainer: {
@@ -116,8 +122,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15
     },
     button: {
-        width: 100,
-
+        width: 130,
+        alignItems: 'center'
     },
     input: {
         width: '70%',
@@ -127,8 +133,10 @@ const styles = StyleSheet.create({
     summaryContainer: {
         marginTop: 20,
         alignItems: 'center'
+    },
+    buttonReset: {
+        backgroundColor: colors.secondaryColor
     }
-
 });
 
 export default StartGameScreen;
