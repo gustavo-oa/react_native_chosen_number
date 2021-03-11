@@ -4,8 +4,7 @@ import
     View, 
     Text, 
     StyleSheet, 
-    Alert, 
-    ScrollView,
+    Alert,
     FlatList
 } from 'react-native';
 
@@ -83,13 +82,13 @@ const GameScreen = props => {
                 </MainButton>
             </Card>
             <View style={styles.listContainer}>
-                {/* <ScrollView contentContainerStyle={styles.list}>
-                    {pastGuesses.map((data, index )=> renderListItem(data, pastGuesses.length - index) )}
-                </ScrollView> */}
+               
                 <FlatList 
                 data={pastGuesses} 
                 renderItem={renderListItem.bind(this, pastGuesses.length)} 
-                keyExtractor={(item) => item}></FlatList>
+                keyExtractor={(item) => item} 
+                contentContainerStyle={styles.list}
+                />
             </View>
             
         </View>
@@ -111,12 +110,11 @@ const styles = StyleSheet.create({
     },
     listContainer: {
         flex:1,
-        width: '80%',
+        width: '60%',
         marginTop: 10
     },
     list: {
         flexGrow: 1,
-        alignItems: 'center',
         justifyContent: 'flex-end'
     },
     listItem: {
@@ -126,7 +124,7 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         backgroundColor: 'white',
         flexDirection: 'row',
-        width: '60%',
+        width: '100%',
         justifyContent: 'space-around',
 
     },
