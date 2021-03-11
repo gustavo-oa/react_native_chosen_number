@@ -4,10 +4,10 @@ import
     View, 
     StyleSheet, 
     Text,  
-    Button, 
     TouchableWithoutFeedback, 
     Keyboard,
-    Alert
+    Alert,
+    Dimensions
 } from 'react-native';
 import Card from '../components/Card';
 import colors from '../constants/colors'
@@ -82,13 +82,13 @@ const StartGameScreen = props => {
                     />
                     <View style={styles.buttonContainer}>
                         <View style={styles.button}>
-                            <MainButton style={styles.buttonReset} onPress={resetInputHandle} color={colors.secondaryColor} >
+                            <MainButton style={{...styles.button, ...styles.buttonReset}} onPress={resetInputHandle} color={colors.secondaryColor} >
                                 <Text>Reset</Text> 
                             </MainButton>
                         </View>
                         <View style={styles.button} >
                             <MainButton  onPress={confirmInputHandle} color={colors.primaryColor} >
-                                <Text> Confirm </Text>
+                                <Text>Confirm</Text>
                             </MainButton>
                         </View>
                     </View>
@@ -111,18 +111,18 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     inputContainer: {
-        width: '90%',
-        maxWidth: '90%',
+        width: '80%',
+        maxWidth: '95%',
+        minWidth: 300,
         alignItems: 'center'
     },
     buttonContainer: {
         flexDirection: 'row',
-        width: '100%',
+        width: '95%',
         justifyContent: 'space-between',
-        paddingHorizontal: 15
     },
     button: {
-        width: 130,
+        width: Dimensions.get('window').width /3.3, 
         alignItems: 'center'
     },
     input: {
