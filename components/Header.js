@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   headerIOS: {
-    backgroundColor: 'white',
+    backgroundColor: Colors.primaryColor,
     borderBottomColor: '#ccc',
     borderBottomWidth: 1
   },

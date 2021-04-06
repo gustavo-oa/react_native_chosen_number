@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
-import * as Font from 'expo-font';
+// import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
 import Header from './components/Header';
@@ -60,10 +60,10 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <View style={styles.screen}>
       <Header title="Guess a Number" />
       {content}
-    </SafeAreaView>
+    </View>
   );
 }
 
